@@ -24,18 +24,21 @@ A modern, production-ready React boilerplate with TypeScript, Tailwind CSS, ESLi
 ## 📦 Package Manager Support
 
 This project supports multiple package managers:
+
 - **npm** (default)
 - **Bun** (lock file included for faster installs)
 
 ## 🏃‍♂️ Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd react-ts-tailwind-eslint-prettier
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -43,6 +46,7 @@ This project supports multiple package managers:
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    # or
@@ -65,6 +69,7 @@ This project supports multiple package managers:
 ## 🎨 Tailwind CSS v4 Features
 
 This boilerplate uses the latest Tailwind CSS v4 with:
+
 - New PostCSS architecture (`@tailwindcss/postcss`)
 - Simplified import system (`@import 'tailwindcss'`)
 - Enhanced base layer with consistent border colors
