@@ -11,22 +11,45 @@
   }
 }
 
+
 @layer components {
 
+  header,
+  footer,
   .custom-header,
   .custom-footer {
+    position: absolute;
+    width: 100%;
+    background-color: transparent !important;
     /* bbackground */
     background-image:
       /* svg overlay on top */
-      url('./assets/frame.svg'),
-      /* background image  */
+      url('./assets/frame.svg');
+    /* background repeat / sizing for each layer */
+    background-repeat: no-repeat;
+    /* svg no-repeat, texture repeat */
+    background-position: center center;
+    /* svg center, texture top-left */
+    background-size: 99% 100%;
+
+    z-index: 1000;
+  }
+
+  .custom-footer,
+  footer {
+    bottom: 0
+  }
+
+  .paper-texture {
+    /* bbackground */
+    background-image:
       url('./assets/paper-pattern.jpg');
 
     /* background repeat / sizing for each layer */
-    background-repeat: no-repeat, repeat;
+    background-repeat: repeat;
     /* svg no-repeat, texture repeat */
-    background-position: center center, top left;
+    background-position: top left;
     /* svg center, texture top-left */
-    background-size: 99% 100%, auto;
+    background-size: auto;
   }
 }

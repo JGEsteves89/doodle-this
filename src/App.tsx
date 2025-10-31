@@ -1,41 +1,34 @@
 // App.tsx
-import { useEffect, useRef } from 'react';
-import { FaGithub } from 'react-icons/fa';
-
-import packageJson from '../package.json';
-import logo from './assets/cupcake.svg';
-
 import './index.css';
 
+import { useRef, useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
+
+import packageJson from '../package.json';
+import logo from './assets/logo.svg';
+import doodles from './doodles.json';
+
+const allDoodles = doodles.flatMap(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (artist: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return artist.doodles.flatMap((repo: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return repo.names.map((name: any) => ({
+        url: repo.location + name,
+        link: artist.link,
+        artist: artist.name,
+        licenseLink: artist.licenseLink,
+        licenseName: artist.licenseName,
+      }));
+    });
+  });
+
+
 export default function App() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight - 128; // subtract header + footer
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    // Example: draw a moving background
-    let frame = 0;
-    const draw = () => {
-      ctx.fillStyle = `hsl(${frame % 360}, 50%, 50%)`;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      frame += 1;
-      requestAnimationFrame(draw);
-    };
-    draw();
-
-    return () => window.removeEventListener('resize', resize);
-  }, []);
-
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(Math.floor(Math.random()*allDoodles.length));
   const currentYear = new Date().getFullYear();
 
   return (
@@ -44,21 +37,62 @@ export default function App() {
       <header className='flex items-center justify-between px-6 py-4 text-black custom-header'>
         <img src={logo} alt='Logo' className='h-10' />
         <div className='flex space-x-4'>
-          <a href='https://github.com' target='_blank' rel='noopener noreferrer'>
+          <a href='https://github.com/JGEsteves89/' target='_blank' rel='noopener noreferrer'>
             <FaGithub size={24} color='black'/>
           </a>
         </div>
       </header>
 
-      {/* Canvas */}
-      <main className='flex-1'>
-        <canvas ref={canvasRef} className='w-full h-full block' />
+      <main ref={containerRef} className='flex-1 h-screen paper-texture' >
+        <TransformWrapper limitToBounds={false} >
+          <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }} >
+            <img src={allDoodles[index].url} alt='doogle' style={{ width: '100vw', marginBlockStart: '4vh' }}
+              onError={() => {
+                let newIndex = index;
+                let attempts = 0;
+                while ((!allDoodles[newIndex]?.url || allDoodles[newIndex].url.trim() === '') ||attempts < 10) {
+                  newIndex = Math.floor(Math.random() * allDoodles.length);
+                  attempts++;
+                }
+                if (newIndex !== index) {
+                  setIndex(newIndex);
+                }
+              }}
+            />
+          </TransformComponent>
+        </TransformWrapper>
       </main>
 
+
       {/* Footer */}
-      <footer className='flex items-center justify-center px-6 py-2 text-black text-sm custom-footer'>
-        <span className='mr-4'>v{packageJson.version}</span>
-        <span className='mr-4'>© {currentYear} JGEsteves</span>
+      <footer className='flex flex-col items-center justify-center px-6 py-2 text-black text-sm custom-footer'>
+        {/* Image author credit */}
+        <div>
+          Image credit: {' '}
+          <a href={allDoodles[index].link} target='_blank' rel='noopener noreferrer'
+            className='text-blue-600 hover:text-blue-500'
+          >
+            {allDoodles[index].artist}
+          </a>{' '}
+          | License: {' '}
+          <a href={allDoodles[index].licenseLink} target='_blank' rel='noopener noreferrer'
+            className='text-blue-600 hover:text-blue-500'
+          >
+            {allDoodles[index].licenseName}
+          </a>
+        </div>
+
+        {/* My credits*/}
+        <div>
+          <span className='mr-5'>v{packageJson.version}</span>
+          <span className='mr-5'>© {currentYear}{' '}
+            <a href='https://github.com/JGEsteves88/' target='_blank' rel='noopener noreferrer'
+              className='text-blue-700 hover:text-blue-600'
+            >
+              JGEsteves
+            </a>
+          </span>
+        </div>
       </footer>
     </div>
   );
