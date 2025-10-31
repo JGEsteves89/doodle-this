@@ -1,6 +1,6 @@
 {
   "name": "doodle-this",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "homepage": "https://JGEsteves89.github.io/doodle-this",
   "scripts": {
     "dev": "vite",
