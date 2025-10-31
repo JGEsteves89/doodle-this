@@ -47,7 +47,7 @@ export default function App() {
     'thumbnailUrl': currentArtwork.url,
     'mainEntityOfPage': {
       '@type': 'WebPage',
-      '@id': 'https://your-domain.com/',
+      '@id': 'https://JGEsteves89.github.io/doodle-this/',
     },
   };
 
