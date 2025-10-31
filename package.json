@@ -1,13 +1,19 @@
 {
   "name": "doodle-this",
   "version": "1.0.0",
+  "homepage": "https://JGEsteves89.github.io/doodle-this",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "publish:patch": "npm run build && npm version patch && git push && git push --tags && npm run deploy",
+    "publish:minor": "npm run build && npm version minor && git push && git push --tags && npm run deploy",
+    "publish:major": "npm run build && npm version major && git push && git push --tags && npm run deploy"
   },
   "dependencies": {
     "caniuse-lite": "^1.0.30001731",
@@ -31,6 +37,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "pre-commit": "^1.0.10",
     "tailwindcss": "^4.1.11",

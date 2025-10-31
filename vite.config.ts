@@ -4,4 +4,9 @@ import { defineConfig } from 'vite';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/doodle-this/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
 });
