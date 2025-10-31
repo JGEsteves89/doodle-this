@@ -1,56 +1,49 @@
-# React TypeScript Tailwind ESLint Prettier Boilerplate
+# Doodle This 
+## Random Art Reference Generator | Quick Creative Inspiration
+Get inspired with a random reference doodle or illustration to spark your creativity. Perfect for artists, students, or anyone looking for quick art ideas.
 
-A modern, production-ready React boilerplate with TypeScript, Tailwind CSS, ESLint, and Prettier pre-configured for optimal development experience.
+## ✨ Features
 
-## 🚀 Recent Updates
+- **Random Art Discovery**: Each visit displays a randomly selected doodle or illustration
+- **Artist Attribution**: Proper credit and licensing information for all artwork
+- **Interactive Viewing**: Zoom and pan functionality for detailed artwork examination
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **SEO Optimized**: Enhanced for search engine visibility and social media sharing
+- **Accessibility First**: Built with screen readers and keyboard navigation in mind
 
-- **React 19.1.1**: Upgraded to the latest React version with improved performance
-- **Tailwind CSS v4**: Updated to Tailwind CSS v4 with new PostCSS architecture
-- **Modern React 18+ Rendering**: Migrated from `ReactDOM.render` to `createRoot` API
-- **Enhanced Development Tools**: Updated ESLint, Prettier, and TypeScript configurations
-- **Bun Support**: Added Bun lock file for faster package management
-- **Pre-commit Hooks**: Automatic code formatting and linting before commits
+## 🎨 About the Art Collection
+
+This gallery showcases doodles and illustrations from various artists, each with:
+- Proper artist attribution and links to their profiles
+- Clear licensing information (Creative Commons, etc.)
+- High-quality artwork suitable for inspiration and study
+- Diverse artistic styles and subjects
 
 ## 🛠️ Tech Stack
 
-- **React 19.1.1** - Latest React with concurrent features
-- **TypeScript 5.8.3** - Static type checking
-- **Tailwind CSS 4.1.11** - Utility-first CSS framework with new architecture
-- **Vite 4.5.14** - Fast build tool and development server
-- **ESLint 8.57.1** - Code linting with TypeScript support
-- **Prettier 3.6.2** - Code formatting with Tailwind plugin
-- **Pre-commit** - Git hooks for code quality
+- **React 19.1.1** - Modern React with concurrent features
+- **TypeScript 5.8.3** - Type-safe development
+- **Tailwind CSS 4.1.11** - Utility-first styling
+- **Vite 7.1.12** - Fast development and building
+- **React Zoom Pan Pinch** - Interactive image viewing
+- **React Icons** - Consistent iconography
 
-## 📦 Package Manager Support
-
-This project supports multiple package managers:
-
-- **npm** (default)
-- **Bun** (lock file included for faster installs)
-
-## 🏃‍♂️ Getting Started
+## 🚀 Getting Started
 
 1. **Clone the repository**
-
    ```bash
    git clone <repository-url>
-   cd react-ts-tailwind-eslint-prettier
+   cd doodle-this
    ```
 
 2. **Install dependencies**
-
    ```bash
    npm install
-   # or
-   bun install
    ```
 
 3. **Start development server**
-
    ```bash
    npm run dev
-   # or
-   bun run dev
    ```
 
 4. **Open your browser**
@@ -61,52 +54,62 @@ This project supports multiple package managers:
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run serve` - Preview production build
-- `npm run lint` - Run ESLint and Prettier
+- `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues
-- `npm run lint:format` - Format code with Prettier
 - `npm run type-check` - Run TypeScript compiler check
 
-## 🎨 Tailwind CSS v4 Features
+## 🔍 SEO Features
 
-This boilerplate uses the latest Tailwind CSS v4 with:
+This application is optimized for search engines with:
 
-- New PostCSS architecture (`@tailwindcss/postcss`)
-- Simplified import system (`@import 'tailwindcss'`)
-- Enhanced base layer with consistent border colors
-- Automatic configuration detection
-
-## 🔧 Code Quality Tools
-
-- **ESLint**: Configured with TypeScript, React, and accessibility rules
-- **Prettier**: Code formatting with Tailwind class sorting
-- **Pre-commit**: Automatic linting and formatting before commits
-- **TypeScript**: Strict type checking configuration
+- **Meta Tags**: Comprehensive meta descriptions, keywords, and Open Graph tags
+- **Structured Data**: JSON-LD markup for artwork and artist information
+- **Semantic HTML**: Proper heading hierarchy and ARIA labels
+- **Sitemap**: XML sitemap for search engine discovery
+- **Robots.txt**: Search engine crawling guidelines
+- **Social Media**: Twitter Card and Open Graph support
 
 ## 📁 Project Structure
 
 ```
 ├── src/
-│   ├── App.tsx          # Main App component
-│   ├── main.tsx         # Entry point with React 18+ createRoot
-│   ├── index.css        # Global styles with Tailwind v4
-│   └── vite-env.d.ts    # Vite type definitions
+│   ├── App.tsx              # Main application component
+│   ├── main.tsx             # React application entry point
+│   ├── index.css            # Global styles
+│   ├── doodles.json         # Artist and artwork data
+│   └── assets/              # Images and static assets
 ├── public/
-├── .eslintrc.js         # ESLint configuration
-├── .prettierrc.js       # Prettier configuration
-├── postcss.config.js    # PostCSS with Tailwind v4
-├── tsconfig.json        # TypeScript configuration
-├── vite.config.ts       # Vite configuration
-└── package.json         # Dependencies and scripts
+│   ├── robots.txt           # Search engine crawling rules
+│   └── sitemap.xml          # Site structure for search engines
+├── index.html               # HTML template with SEO meta tags
+└── package.json             # Dependencies and scripts
 ```
 
-## 🚀 Performance Optimizations
+## 🎯 How It Works
 
-- React 19 with improved concurrent features
-- Vite for fast HMR and optimized builds
-- Modern React rendering with `createRoot`
-- Tailwind CSS v4 for smaller bundle sizes
-- TypeScript for better development experience and error catching
+1. **Data Loading**: Artwork information is loaded from `doodles.json`
+2. **Random Selection**: A random artwork is selected on each page load/refresh
+3. **Attribution Display**: Artist information and licensing details are shown
+4. **Interactive Viewing**: Users can zoom and pan to examine artwork details
+5. **SEO Enhancement**: Each artwork generates structured data for search engines
+
+## 🤝 Contributing
+
+To add new artwork to the collection:
+
+1. Ensure proper licensing and permission from the artist
+2. Add artist and artwork information to `src/doodles.json`
+3. Include proper attribution links and license information
+4. Test that the artwork loads correctly
 
 ## 📄 License
 
-MIT License
+This project is licensed under the MIT License. Individual artworks retain their original licenses as specified in the attribution information.
+
+## 👨‍💻 Author
+
+Created and maintained by [JGEsteves](https://github.com/JGEsteves88/)
+
+---
+
+*Discover new art every day with Doodle This - where creativity meets proper attribution.*
