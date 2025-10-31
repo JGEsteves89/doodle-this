@@ -158,7 +158,7 @@ export default function App() {
           </span>
           <span className='mr-5'>
             © {currentYear}{' '}
-            <a href='https://github.com/JGEsteves88/'
+            <a href='https://github.com/JGEsteves89/'
               target='_blank'
               rel='noopener noreferrer'
               className='text-blue-700 hover:text-blue-600'

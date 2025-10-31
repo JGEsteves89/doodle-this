@@ -108,7 +108,7 @@ This project is licensed under the MIT License. Individual artworks retain their
 
 ## 👨‍💻 Author
 
-Created and maintained by [JGEsteves](https://github.com/JGEsteves88/)
+Created and maintained by [JGEsteves](https://github.com/JGEsteves89/)
 
 ---
 
