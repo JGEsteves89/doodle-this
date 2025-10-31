@@ -2,6 +2,46 @@
 
 @layer base {
 
+  :root {
+    /* CSS Custom Properties for viewport handling */
+    --vh: 1vh;
+    --safe-area-inset-top: env(safe-area-inset-top, 0px);
+    --safe-area-inset-right: env(safe-area-inset-right, 0px);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-inset-left: env(safe-area-inset-left, 0px);
+  }
+
+  html {
+    /* Prevent scrolling and ensure full viewport usage */
+    overflow: hidden;
+    height: 100%;
+    /* Support for iOS */
+    height: 100vh;
+    /* Support for newer browsers with dynamic viewport */
+    height: 100dvh;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    height: 100vh;
+    height: 100dvh;
+    /* Extend into safe areas */
+    padding-top: var(--safe-area-inset-top);
+    padding-right: var(--safe-area-inset-right);
+    padding-bottom: var(--safe-area-inset-bottom);
+    padding-left: var(--safe-area-inset-left);
+  }
+
+  #root {
+    height: 100%;
+    height: calc(100vh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));
+    height: calc(100dvh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));
+    overflow: hidden;
+  }
+
   *,
   ::after,
   ::before,
@@ -12,7 +52,20 @@
 }
 
 
+
 @layer components {
+  html, body {
+    /* bbackground */
+    background-image:
+      url('./assets/paper-pattern.jpg');
+
+    /* background repeat / sizing for each layer */
+    background-repeat: repeat;
+    /* svg no-repeat, texture repeat */
+    background-position: top left;
+    /* svg center, texture top-left */
+    background-size: auto;
+  }
 
   header,
   footer,
@@ -21,7 +74,7 @@
     position: absolute;
     width: 100%;
     background-color: transparent !important;
-    /* bbackground */
+    /* background */
     background-image:
       /* svg overlay on top */
       url('./assets/frame.svg');
@@ -38,18 +91,5 @@
   .custom-footer,
   footer {
     bottom: 0
-  }
-
-  .paper-texture {
-    /* bbackground */
-    background-image:
-      url('./assets/paper-pattern.jpg');
-
-    /* background repeat / sizing for each layer */
-    background-repeat: repeat;
-    /* svg no-repeat, texture repeat */
-    background-position: top left;
-    /* svg center, texture top-left */
-    background-size: auto;
   }
 }

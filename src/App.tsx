@@ -52,7 +52,7 @@ export default function App() {
   };
 
   return (
-    <div className='flex flex-col h-screen'>
+    <div className='flex flex-col' style={{ height: '100vh' }}>
       {/* Skip Navigation Link */}
       <a href='#main-content'
         className='sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50'
@@ -82,7 +82,7 @@ export default function App() {
       {/* Main Content */}
       <main ref={containerRef}
         id='main-content'
-        className='flex-1 h-screen paper-texture'
+        className='flex-1 overflow-hidden'
         role='main'
         aria-label='Art gallery viewer'
       >
