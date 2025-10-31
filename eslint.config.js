@@ -10,8 +10,8 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.{js,jsx,ts,tsx}',],
-    ignores: ['node_modules', 'dist',],
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    ignores: ['node_modules', 'dist'],
     plugins: {
       '@stylistic': stylistic,
       react,
@@ -24,7 +24,7 @@ export default tseslint.config(
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        ecmaFeatures: { jsx: true, },
+        ecmaFeatures: { jsx: true },
       },
       globals: {
         browser: true,
@@ -33,11 +33,11 @@ export default tseslint.config(
       },
     },
     settings: {
-      react: { version: 'detect', },
+      react: { version: 'detect' },
       'import/resolver': {
         node: {
-          paths: ['src',],
-          extensions: ['.js', '.jsx', '.ts', '.tsx',],
+          paths: ['src'],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
         },
       },
     },
@@ -51,9 +51,9 @@ export default tseslint.config(
       'jsx-a11y/anchor-is-valid': [
         'error',
         {
-          components: ['Link',],
-          specialLink: ['hrefLeft', 'hrefRight',],
-          aspects: ['invalidHref', 'preferButton',],
+          components: ['Link'],
+          specialLink: ['hrefLeft', 'hrefRight'],
+          aspects: ['invalidHref', 'preferButton'],
         },
       ],
 
@@ -72,32 +72,32 @@ export default tseslint.config(
       // STYLISTIC (FORMATTING) RULES
       // ======================================================
 
-      '@stylistic/semi': ['error', 'always',],
-      '@stylistic/semi-style': ['error', 'last',],
+      '@stylistic/semi': ['error', 'always'],
+      '@stylistic/semi-style': ['error', 'last'],
       '@stylistic/quotes': [
         'error',
         'single',
-        { avoidEscape: true, allowTemplateLiterals: 'always', },
+        { avoidEscape: true, allowTemplateLiterals: 'always' },
       ],
-      '@stylistic/jsx-quotes': ['error', 'prefer-single',],
-      '@stylistic/indent': ['error', 2, { SwitchCase: 1, },],
+      '@stylistic/jsx-quotes': ['error', 'prefer-single'],
+      '@stylistic/indent': ['error', 2, { SwitchCase: 1 }],
       '@stylistic/comma-dangle': [
         'error',
         {
-          arrays: 'always',
-          objects: 'always',
-          imports: 'always',
-          exports: 'always',
-          functions: 'always',
+          arrays: 'always-multiline',
+          objects: 'always-multiline',
+          imports: 'always-multiline',
+          exports: 'always-multiline',
+          functions: 'always-multiline',
         },
       ],
-      '@stylistic/object-curly-spacing': ['error', 'always',],
-      '@stylistic/jsx-closing-bracket-location': ['error', 'tag-aligned',],
-      '@stylistic/arrow-parens': ['error', 'always',],
+      '@stylistic/object-curly-spacing': ['error', 'always'],
+      '@stylistic/jsx-closing-bracket-location': ['error', 'tag-aligned'],
+      '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/max-len': [
         'warn',
         {
-          code: 100,
+          code: 120,
           ignoreComments: false,
           ignoreStrings: false,
           ignoreTemplateLiterals: false,
@@ -105,36 +105,36 @@ export default tseslint.config(
           ignorePattern: '^import |^export ',
         },
       ],
-      '@stylistic/linebreak-style': ['error', 'unix',],
+      '@stylistic/linebreak-style': ['error', 'unix'],
       '@stylistic/no-trailing-spaces': 'error',
-      '@stylistic/eol-last': ['error', 'always',],
+      '@stylistic/eol-last': ['error', 'always'],
       '@stylistic/no-multiple-empty-lines': [
         'error',
-        { max: 2, maxEOF: 0, maxBOF: 0, },
+        { max: 2, maxEOF: 0, maxBOF: 0 },
       ],
-      '@stylistic/comma-spacing': ['error', { before: false, after: true, },],
-      '@stylistic/keyword-spacing': ['error', { before: true, after: true, },],
+      '@stylistic/comma-spacing': ['error', { before: false, after: true }],
+      '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
       '@stylistic/space-before-function-paren': [
         'error',
-        { anonymous: 'always', named: 'never', asyncArrow: 'always', },
+        { anonymous: 'always', named: 'never', asyncArrow: 'always' },
       ],
-      '@stylistic/arrow-spacing': ['error', { before: true, after: true, },],
+      '@stylistic/arrow-spacing': ['error', { before: true, after: true }],
       '@stylistic/no-mixed-spaces-and-tabs': 'error',
       '@stylistic/operator-linebreak': [
         'error',
         'after',
-        { overrides: { '?': 'before', ':': 'before', }, },
+        { overrides: { '?': 'before', ':': 'before' } },
       ],
       '@stylistic/space-before-blocks': 'error',
-      '@stylistic/space-in-parens': ['error', 'never',],
-      '@stylistic/template-curly-spacing': ['error', 'never',],
+      '@stylistic/space-in-parens': ['error', 'never'],
+      '@stylistic/template-curly-spacing': ['error', 'never'],
       '@stylistic/jsx-curly-spacing': [
         'error',
-        { when: 'never', attributes: true, children: false, },
+        { when: 'never', attributes: true, children: false },
       ],
       '@stylistic/object-property-newline': [
         'error',
-        { allowAllPropertiesOnSameLine: true, },
+        { allowAllPropertiesOnSameLine: true },
       ],
       '@stylistic/key-spacing': [
         'error',

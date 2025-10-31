@@ -1,11 +1,32 @@
 @import 'tailwindcss';
 
 @layer base {
+
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer components {
+
+  .custom-header,
+  .custom-footer {
+    /* bbackground */
+    background-image:
+      /* svg overlay on top */
+      url('./assets/frame.svg'),
+      /* background image  */
+      url('./assets/paper-pattern.jpg');
+
+    /* background repeat / sizing for each layer */
+    background-repeat: no-repeat, repeat;
+    /* svg no-repeat, texture repeat */
+    background-position: center center, top left;
+    /* svg center, texture top-left */
+    background-size: 99% 100%, auto;
   }
 }

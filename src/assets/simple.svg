@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1 1"
+     preserveAspectRatio="none">
+  <title>Intrinsic ratio</title>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="navy"/>
+      <stop offset="100%" stop-color="maroon"/>
+    </linearGradient>
+  </defs>
+  <rect width="1" height="1" fill="url(#g)" />
+</svg>
