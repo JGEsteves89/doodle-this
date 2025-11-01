@@ -1,0 +1,25 @@
+/* ./src/assets/fonts/local-fonts.css */
+
+@font-face {
+  font-family: 'Barrio';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./Barrio-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kirang Haerang';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./KirangHaerang-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gochi Hand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./GochiHand-Regular.ttf') format('truetype');
+}
