@@ -26,9 +26,51 @@ const allDoodles = doodles.flatMap(
   });
 
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function ArtworkImage({ currentArtwork, allDoodles, index, setIndex }: any) {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [marginTop, setMarginTop] = useState('4vh');
+
+  const onImageLoad = () => {
+    if (imgRef.current) {
+      const height = imgRef.current.clientHeight;
+      const newMargin = `${height * 0.15}px`;
+      setMarginTop(newMargin);
+    }
+  };
+
+  return (
+    <img
+      src={currentArtwork.url}
+      alt={`Creative doodle artwork by ${currentArtwork.artist} - ${currentArtwork.licenseName} licensed`}
+      title={`Artwork by ${currentArtwork.artist}`}
+      style={{ width: '100vw', marginBlockStart: marginTop }}
+      loading='eager'
+      itemProp='image'
+      ref={imgRef}
+      onLoad={onImageLoad}
+      onError={() => {
+        let newIndex = index;
+        let attempts = 0;
+        while (
+          (!allDoodles[newIndex]?.url || allDoodles[newIndex].url.trim() === '') ||
+          attempts < 10
+        ) {
+          newIndex = Math.floor(Math.random() * allDoodles.length);
+          attempts++;
+        }
+        if (newIndex !== index) {
+          setIndex(newIndex);
+        }
+      }}
+    />
+  );
+}
+
+
 export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [index, setIndex] = useState(Math.floor(Math.random()*allDoodles.length));
+  const [index, setIndex] = useState(Math.floor(Math.random() * allDoodles.length));
   const currentYear = new Date().getFullYear();
 
   // Generate structured data for current artwork
@@ -73,7 +115,7 @@ export default function App() {
               rel='noopener noreferrer'
               aria-label='Visit JGEsteves GitHub profile'
             >
-              <FaGithub size={24} color='black'/>
+              <FaGithub size={24} color='black' />
             </a>
           </div>
         </nav>
@@ -82,7 +124,7 @@ export default function App() {
       {/* Main Content */}
       <main ref={containerRef}
         id='main-content'
-        className='flex-1 h-screen paper-texture'
+        className='flex-1 h-screen'
         role='main'
         aria-label='Art gallery viewer'
       >
@@ -98,24 +140,11 @@ export default function App() {
 
           <TransformWrapper limitToBounds={false} >
             <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }} >
-              <img
-                src={currentArtwork.url}
-                alt={`Creative doodle artwork by ${currentArtwork.artist} - ${currentArtwork.licenseName} licensed`}
-                title={`Artwork by ${currentArtwork.artist}`}
-                style={{ width: '100vw', marginBlockStart: '4vh' }}
-                loading='eager'
-                itemProp='image'
-                onError={() => {
-                  let newIndex = index;
-                  let attempts = 0;
-                  while ((!allDoodles[newIndex]?.url || allDoodles[newIndex].url.trim() === '') ||attempts < 10) {
-                    newIndex = Math.floor(Math.random() * allDoodles.length);
-                    attempts++;
-                  }
-                  if (newIndex !== index) {
-                    setIndex(newIndex);
-                  }
-                }}
+              <ArtworkImage
+                currentArtwork={currentArtwork}
+                allDoodles={allDoodles}
+                index={index}
+                setIndex={setIndex}
               />
             </TransformComponent>
           </TransformWrapper>
