@@ -15,7 +15,7 @@ export function Footer({ currentArtwork }: FooterProps) {
 
   return (
     <footer
-      className='flex flex-col items-center justify-center px-6 py-2 text-black text-sm drawing-frame'
+      className='flex flex-col items-center justify-center px-6 py-2 mt-auto text-black text-sm drawing-frame'
       role='contentinfo'
       aria-label='Site information and credits'
     >
