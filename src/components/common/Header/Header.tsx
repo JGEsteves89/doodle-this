@@ -15,7 +15,7 @@ export function Header() {
           />
           <div className='brand-text'>
             <h1 className='app-title'>DOODLE THIS</h1>
-            <p className='tagline'>Doolde ideas for creative drawing time</p>
+            <p className='tagline'>Doodle ideas for creative drawing time</p>
           </div>
         </div>
 
