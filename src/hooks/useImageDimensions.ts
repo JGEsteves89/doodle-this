@@ -7,7 +7,7 @@ export function useImageDimensions() {
   const handleImageLoad = () => {
     if (imgRef.current) {
       const height = imgRef.current.clientHeight;
-      const newMargin = `${height * 0.15}px`;
+      const newMargin = `${height * 0.30}px`;
       setMarginTop(newMargin);
     }
   };

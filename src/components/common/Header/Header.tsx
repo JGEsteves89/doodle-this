@@ -1,26 +1,31 @@
-import { FaGithub } from 'react-icons/fa';
+import './Header.css';
 
 import logo from '../../../assets/logo.svg';
 
 export function Header() {
   return (
-    <header className='flex items-center justify-between px-6 py-4 text-black custom-header' role='banner'>
-      <div className='flex items-center'>
-        <img src={logo} alt='Doodle This - Random Art Gallery Logo' className='h-10' />
-        <h1 className='sr-only'>Doodle This - Random Art Gallery</h1>
-      </div>
-      <nav role='navigation' aria-label='Main navigation'>
-        <div className='flex space-x-4'>
-          <a
-            href='https://github.com/JGEsteves89/'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Visit JGEsteves GitHub profile'
-          >
-            <FaGithub size={24} color='black' />
-          </a>
+    <header className='header-container drawing-frame' role='banner'>
+      <div className='header-content'>
+        {/* Left section - Logo and title */}
+        <div className='brand-section'>
+          <img
+            src={logo}
+            alt='Doodle This Logo'
+            className='logo'
+          />
+          <div className='brand-text'>
+            <h1 className='app-title'>DOODLE THIS</h1>
+            <p className='tagline'>Doolde ideas for creative drawing time</p>
+          </div>
         </div>
-      </nav>
+
+        {/* Center section - Description (hidden on mobile) */}
+        <div className='description-section'>
+          <p className='description'>
+            Perfect for drawing sessions with kids - use these fun doodles as reference or inspiration
+          </p>
+        </div>
+      </div>
     </header>
   );
 }

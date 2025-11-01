@@ -1,3 +1,7 @@
+import './Footer.css';
+
+import { FaGithub } from 'react-icons/fa';
+
 import packageJson from '../../../../package.json';
 import type { ProcessedArtwork } from '../../../types/artwork';
 import { ArtworkAttribution } from '../../artwork/ArtworkAttribution';
@@ -11,7 +15,7 @@ export function Footer({ currentArtwork }: FooterProps) {
 
   return (
     <footer
-      className='flex flex-col items-center justify-center px-6 py-2 text-black text-sm custom-footer'
+      className='flex flex-col items-center justify-center px-6 py-2 text-black text-sm drawing-frame'
       role='contentinfo'
       aria-label='Site information and credits'
     >
@@ -35,6 +39,7 @@ export function Footer({ currentArtwork }: FooterProps) {
             JGEsteves
           </a>
         </span>
+        <FaGithub color='purple' size={20} />
       </div>
     </footer>
   );

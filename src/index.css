@@ -1,6 +1,13 @@
 @import 'tailwindcss';
 
 @layer base {
+  :root {
+    --primary-dark: #2d3748;
+    --primary-medium: #4a5568;
+    --primary-light: #718096;
+    --accent: #667eea;
+    --background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  }
 
   *,
   ::after,
@@ -10,7 +17,8 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 
-  html, body {
+  html,
+  body {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -22,22 +30,29 @@
     padding-right: var(--safe-area-inset-right);
     padding-bottom: var(--safe-area-inset-bottom);
     padding-left: var(--safe-area-inset-left);
+
     /* background */
     background-image: url('./assets/paper-pattern.jpg');
     background-repeat: repeat;
     background-position: top left;
     background-size: auto;
   }
+
 }
 
 
 @layer components {
-  header,
-  footer,
-  .custom-header,
-  .custom-footer {
-    position: absolute;
+  header {
     width: 100%;
+    position: absolute
+  }
+
+  .custom-footer,
+  footer {
+    bottom: 0
+  }
+
+  .drawing-frame {
     background-color: transparent !important;
     /* background */
     background-image:
@@ -48,13 +63,8 @@
     /* svg no-repeat, texture repeat */
     background-position: center center;
     /* svg center, texture top-left */
-    background-size: 99% 100%;
-
+    background-size: auto 100%;
     z-index: 1000;
   }
 
-  .custom-footer,
-  footer {
-    bottom: 0
-  }
 }

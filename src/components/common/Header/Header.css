@@ -1,0 +1,156 @@
+/* Import trendy fonts for young adults */
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Kirang+Haerang&family=Gochi+Hand:wght@400&display=swap');
+
+/* Trendy young adult color palette */
+:root {
+	--gen-z-yellow: #FFD23F;
+	/* Bright sunny yellow */
+	--electric-orange: #FF6B35;
+	/* Vibrant orange */
+	--cyber-purple: #7209B7;
+	/* Digital purple */
+	--deep-navy: #1a202c;
+	/* Sophisticated dark */
+	--warm-gray: #4a5568;
+	/* Readable secondary */
+	--light-gray: #718096;
+	/* Subtle text */
+}
+
+.app-title {
+  font-family: 'Barrio', cursive;
+  font-weight: 400;
+  font-size: clamp(1.425rem, 3.8vw, 1.9rem); /* 5% smaller */
+  color: #ff6b35;
+  margin: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.tagline {
+  font-family: 'Kirang Haerang', cursive;
+  font-weight: 400;
+  font-size: clamp(0.83rem, 2.375vw, 0.95rem); /* 5% smaller */
+  color: #7209b7;
+  margin: 0.24rem 0 0 0;
+  transform: rotate(-1deg);
+}
+
+.description {
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 400;
+  font-size: clamp(0.76rem, 1.9vw, 0.855rem); /* 5% smaller */
+  color: #4a5568;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.header-container {
+	background-color: transparent;
+	padding: 0.95rem;
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1140px;
+	/* 5% smaller */
+	margin: 0 auto;
+	gap: 0.95rem;
+	/* 5% smaller */
+}
+
+.brand-section {
+	display: flex;
+	align-items: center;
+	gap: 0.71rem;
+	/* 5% smaller */
+	flex-shrink: 0;
+}
+
+.logo {
+	height: 2.375rem;
+	/* 5% smaller */
+	width: auto;
+	filter: drop-shadow(0 2px 4px rgba(255, 210, 63, 0.3));
+}
+
+.brand-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.app-title {
+	color: var(--deep-navy);
+	text-shadow: 0 1px 2px rgba(255, 210, 63, 0.3);
+}
+
+.tagline {
+	color: var(--electric-orange);
+}
+
+.description-section {
+	flex: 1;
+	max-width: 380px;
+	/* 5% smaller */
+	margin: 0 0.95rem;
+	/* 5% smaller */
+}
+
+.description {
+	color: var(--warm-gray);
+}
+
+.nav-section {
+	flex-shrink: 0;
+}
+
+.github-link {
+	color: var(--cyber-purple);
+	transition: all 0.2s ease;
+	padding: 0.475rem;
+	/* 5% smaller */
+	border-radius: 8px;
+}
+
+.github-link:hover {
+	color: var(--deep-navy);
+	background: var(--gen-z-yellow);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(255, 210, 63, 0.4);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .brand-section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .description-section {
+    margin: 0;
+  }
+  
+  .description {
+    display: none; /* Hide detailed description on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-section {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  
+  .brand-text {
+    text-align: left;
+  }
+}
