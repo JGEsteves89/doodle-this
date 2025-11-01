@@ -1,0 +1,1 @@
+export { ArtworkAttribution } from './ArtworkAttribution';
