@@ -2,8 +2,6 @@ import React from 'react';
 
 interface FloatButtonProps {
   img: string;
-  newIndex: number;
-  setIndex: (index: number) => void;
   onClick: () => void;
 }
 
