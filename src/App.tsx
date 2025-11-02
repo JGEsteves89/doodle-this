@@ -1,11 +1,14 @@
 import './index.css';
 
+import btnImage from './assets/next-button.svg';
 import { ArtworkViewer } from './components/artwork/ArtworkViewer';
 import { Footer } from './components/common/Footer';
 import { Header } from './components/common/Header';
+import { FloatButton } from './components/common/Other/FloatButton';
 import doodles from './doodles.json';
 import { useRandomArtwork } from './hooks/useRandomArtwork';
 import type { Artist } from './types/artwork';
+import { getRandomArtworkIndex } from './utils/artworkUtils';
 
 const artists = doodles as Artist[];
 
@@ -29,6 +32,7 @@ export default function App() {
         index={index}
         setIndex={setIndex}
       />
+      <FloatButton img={btnImage} onClick={() => setIndex(getRandomArtworkIndex(allDoodles.length))}/>
       <Footer currentArtwork={currentArtwork} />
     </div>
   );

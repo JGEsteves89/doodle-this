@@ -15,6 +15,7 @@ export function processArtworkData(artists: Artist[]): ProcessedArtwork[] {
 }
 
 export function getRandomArtworkIndex(artworksLength: number): number {
+  console.log('Random number');
   return Math.floor(Math.random() * artworksLength);
 }
 
