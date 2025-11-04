@@ -1,0 +1,4 @@
+- [ ] Follow up on bluesky https://bsky.app/profile/jgesteves.bsky.social
+- [ ] Follow up on Product hunt https://www.producthunt.com/my/products
+- [ ] Follow up on Mastodon https://mastodon.social/@jgesteves
+- [ ] Follow up on X https://x.com/jgesteves89

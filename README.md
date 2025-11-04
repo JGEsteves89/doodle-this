@@ -1,7 +1,8 @@
-# Doodle This 
-## Random Art Reference Generator | Quick Creative Inspiration
-Get inspired with a random reference doodle or illustration to spark your creativity. Perfect for artists, students, or anyone looking for quick art ideas.
+# Doodle This
 
+## Random Art Reference Generator | Quick Creative Inspiration
+
+Get inspired with a random reference doodle or illustration to spark your creativity. Perfect for artists, students, or anyone looking for quick art ideas.
 
 [Doodle This - Random Art Reference Generator | Quick Creative Inspiration](https://jgesteves89.github.io/doodle-this/)
 
@@ -17,6 +18,7 @@ Get inspired with a random reference doodle or illustration to spark your creati
 ## 🎨 About the Art Collection
 
 This gallery showcases doodles and illustrations from various artists, each with:
+
 - Proper artist attribution and links to their profiles
 - Clear licensing information (Creative Commons, etc.)
 - High-quality artwork suitable for inspiration and study
@@ -34,17 +36,20 @@ This gallery showcases doodles and illustrations from various artists, each with
 ## 🚀 Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd doodle-this
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -98,12 +103,18 @@ This application is optimized for search engines with:
 
 ## 🤝 Contributing
 
-To add new artwork to the collection:
+### Contribute as an Artist
 
-1. Ensure proper licensing and permission from the artist
-2. Add artist and artwork information to `src/doodles.json`
-3. Include proper attribution links and license information
-4. Test that the artwork loads correctly
+If you'd like to share your artwork for this project, please [open an issue](https://github.com/JGEsteves89/doodle-this/issues).  
+Include your artist name, a link to your website or portfolio, links to your pieces, and the license under which you’re sharing them.
+
+Note: vector images with transparency work best for this app.
+
+### Contribute as a Developer
+
+Notice something that could be improved?  
+Found a bug or have an idea for a new feature?  
+Do it! Just do it!
 
 ## 📄 License
 
@@ -115,4 +126,4 @@ Created and maintained by [JGEsteves](https://github.com/JGEsteves89/)
 
 ---
 
-*Discover new art every day with Doodle This - where creativity meets proper attribution.*
+_Discover new art every day with Doodle This - where creativity meets proper attribution._
