@@ -16,7 +16,7 @@ export const MyButton: React.FC<MyButtonProps> = ({ img, onClick, className = ''
         text-white p-0 m-0 rounded-full
         transition-all duration-200
         cursor-pointer
-        w-full h-full
+        h-full
         flex items-center justify-center
         ${className}
       `}
