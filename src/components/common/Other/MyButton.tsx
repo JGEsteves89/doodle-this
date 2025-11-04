@@ -16,8 +16,9 @@ export const MyButton: React.FC<MyButtonProps> = ({ img, onClick, className = ''
         text-white p-0 m-0 rounded-full
         transition-all duration-200
         cursor-pointer
-        h-full
+        h-full w-full
         flex items-center justify-center
+        
         ${className}
       `}
       aria-label='Button'
@@ -25,7 +26,7 @@ export const MyButton: React.FC<MyButtonProps> = ({ img, onClick, className = ''
       <img
         src={img}
         alt='Button logo'
-        className={`w-${imgSize} h-${imgSize} object-contain`}
+        className={`w-${imgSize} h-${imgSize} max-w-full max-h-full object-contain`}
       />
     </button>
   );

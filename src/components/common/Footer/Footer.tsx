@@ -36,13 +36,11 @@ export function Footer({ currentArtwork, setIndex, allDoodles }: FooterProps) {
         <div className='w-1/3 h-full p-2'>
           <MyButton img={contrBtnImg}
             onClick={() => window.open('https://github.com/JGEsteves89/doodle-this?tab=readme-ov-file#-contributing', '_blank')}
-            className='w-5/6'
           />
         </div>
         <div className='w-1/3 h-full p-2'>
           <MyButton img={nextBtnImg}
             onClick={() => setIndex(getRandomArtworkIndex(allDoodles.length))}
-            className='w-5/6'
           />
         </div>
       </div>
