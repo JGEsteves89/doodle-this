@@ -1,3 +1,7 @@
+footer {
+  height: 15%
+}
+
 .site-credits {
-	display: flex;
+  display: flex;
 }
